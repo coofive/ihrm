@@ -11,7 +11,6 @@ import lombok.experimental.Accessors;
  */
 @Data
 @Accessors(chain = true)
-@NoArgsConstructor
 public class Response<T> {
     /**
      * 是否成功
@@ -29,6 +28,9 @@ public class Response<T> {
      * 返回数据
      */
     private T data;
+
+    public Response() {
+    }
 
     public Response(RespCode respCode) {
         this.flag = respCode.flag;

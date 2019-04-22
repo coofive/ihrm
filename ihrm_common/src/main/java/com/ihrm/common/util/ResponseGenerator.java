@@ -2,6 +2,7 @@ package com.ihrm.common.util;
 
 import com.ihrm.common.entity.RespCode;
 import com.ihrm.common.entity.Response;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -10,8 +11,8 @@ import org.slf4j.LoggerFactory;
  *
  * @author wenwu.liu.o
  */
+@Slf4j
 public class ResponseGenerator {
-    private final static Logger log = LoggerFactory.getLogger(ResponseGenerator.class);
 
     /**
      * 返回成功
