@@ -2,6 +2,7 @@ package com.ihrm.common.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 /**
  * @author : coofive
@@ -9,6 +10,7 @@ import lombok.NoArgsConstructor;
  * @date : 4/21/2019 10:44 PM
  */
 @Data
+@Accessors(chain = true)
 @NoArgsConstructor
 public class Response<T> {
     /**

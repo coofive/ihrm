@@ -15,7 +15,7 @@ public enum RespCode {
     /**
      * 返回失败
      */
-    FAILED(false, "0001", "失败"),
+    FAIL(false, "0001", "失败"),
     /**
      * 未登录
      */
