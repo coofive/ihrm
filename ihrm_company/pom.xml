@@ -24,4 +24,17 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <finalName>ihrm_company</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.ihrm.company.CompanyApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
