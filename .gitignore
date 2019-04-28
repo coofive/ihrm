@@ -7,7 +7,7 @@
 *.iml
 out
 gen
-/tartget/
+/target/
 
 
 # Eclipse project files
