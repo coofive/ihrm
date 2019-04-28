@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * @author wenwu.liu.o
  */
 @Configuration
-@MapperScan("com.ihrm.company.dao")
+@MapperScan("com.ihrm.company.dao.mapper")
 public class MybatisPlusConfig {
 
     /**
