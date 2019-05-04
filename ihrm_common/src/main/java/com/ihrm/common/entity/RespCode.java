@@ -31,7 +31,7 @@ public enum RespCode {
     /**
      * 服务器内部错误
      */
-    INTERNAL_SERVER_ERROR(false, "0004", "服务器内部错误");
+    INTERNAL_SERVER_ERROR(false, "0005", "服务器内部错误");
 
 
     boolean flag;
