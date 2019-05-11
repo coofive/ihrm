@@ -21,7 +21,7 @@ public class SaveCompanyDTO {
     /**
      * 公司名称
      */
-    @NotEmpty
+    @NotEmpty(message = "公司名不能为空")
     private String companyName;
     /**
      * 企业登录账户ID

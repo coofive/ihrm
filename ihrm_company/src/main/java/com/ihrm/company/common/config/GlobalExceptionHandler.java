@@ -7,6 +7,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+import javax.validation.ValidationException;
+import java.util.Set;
+
 /**
  * @author : coofive
  * @version : 1.0.0
@@ -15,6 +20,18 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 @Slf4j
 public class GlobalExceptionHandler {
+
+    @ExceptionHandler(value = ValidationException.class)
+    public Response handleValidationException(ValidationException e){
+        if (e instanceof ConstraintViolationException){
+            ConstraintViolationException exs = (ConstraintViolationException) e;
+            Set<ConstraintViolation<?>> violations = exs.getConstraintViolations();
+            if (violations.iterator().hasNext()){
+                return ResponseGenerator.fail(violations.iterator().next().getMessage());
+            }
+        }
+        return ResponseGenerator.fail("validate error");
+    }
 
     @ExceptionHandler(value = Exception.class)
     public Response handleGlobalException(Exception e){
