@@ -1,37 +1,37 @@
-package com.ihrm.entity.company.po;
+package com.ihrm.entity.company.dto;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.experimental.Accessors;
 import lombok.extern.slf4j.Slf4j;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 
 /**
- * 企业实体类
- *
- * @author wenwu.liu.o
+ * @author : coofive
+ * @version : 1.0.0
+ * @date : 5/4/2019 5:47 PM
  */
 @Data
 @Accessors(chain = true)
-@TableName(value = "co_company")
 @Slf4j
-public class Company {
-    @TableId(type = IdType.ID_WORKER_STR)
-    private String cid;
+public class SaveCompanyDTO {
     /**
      * 公司名称
      */
+    @NotEmpty(message = "公司名不能为空")
     private String companyName;
     /**
      * 企业登录账户ID
      */
+    @NotEmpty
     private String managerId;
     /**
      * 当前版本
      */
+    @NotEmpty
     private String version;
     /**
      * 持续时间
@@ -44,6 +44,7 @@ public class Company {
     /**
      * 公司地区
      */
+    @NotEmpty
     private String companyArea;
     /**
      * 公司地址
@@ -56,14 +57,17 @@ public class Company {
     /**
      * 法人代表
      */
+    @NotEmpty
     private String legalRepresentative;
     /**
      * 公司电话
      */
+    @NotEmpty
     private String companyPhone;
     /**
      * 邮箱
      */
+    @Email
     private String companyMail;
     /**
      * 公司规模
@@ -84,13 +88,11 @@ public class Company {
     /**
      * 状态
      */
+    @NotNull
     private Integer state;
     /**
      * 当前余额
      */
+    @NotNull
     private Double balance;
-    /**
-     * 创建时间
-     */
-    private Timestamp createTime;
 }

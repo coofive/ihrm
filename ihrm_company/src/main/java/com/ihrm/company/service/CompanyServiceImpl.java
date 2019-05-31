@@ -12,4 +12,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 public class CompanyServiceImpl extends ServiceImpl<CompanyMapper, Company> {
+    public boolean saveCompany(Company company) {
+        return save(company);
+    }
 }

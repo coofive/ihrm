@@ -1,25 +1,18 @@
-package com.ihrm.entity.company.po;
+package com.ihrm.entity.company.vo;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.experimental.Accessors;
-import lombok.extern.slf4j.Slf4j;
 
 import java.sql.Timestamp;
 
 /**
- * 企业实体类
- *
- * @author wenwu.liu.o
+ * @author : coofive
+ * @version : 1.0.0
+ * @date : 5/4/2019 5:58 PM
  */
 @Data
 @Accessors(chain = true)
-@TableName(value = "co_company")
-@Slf4j
-public class Company {
-    @TableId(type = IdType.ID_WORKER_STR)
+public class CompanyVO {
     private String cid;
     /**
      * 公司名称

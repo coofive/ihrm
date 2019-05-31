@@ -21,6 +21,6 @@ CREATE TABLE `co_company`  (
   `audit_state` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '审核状态',
   `state` tinyint(2) NOT NULL DEFAULT 1 COMMENT '状态',
   `balance` double NOT NULL COMMENT '当前余额',
-  `create_time` date NOT NULL COMMENT '创建时间',
+  `create_time` date NOT NULL DEFAULT current_timestamp COMMENT '创建时间',
   PRIMARY KEY (`cid`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '公司主表' ROW_FORMAT = Dynamic;
