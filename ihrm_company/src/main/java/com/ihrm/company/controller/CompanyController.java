@@ -1,6 +1,7 @@
 package com.ihrm.company.controller;
 
 import com.ihrm.common.entity.Response;
+import com.ihrm.common.util.ResponseGenerator;
 import com.ihrm.entity.company.po.Company;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +19,6 @@ public class CompanyController {
 
     @PostMapping
     public Response add(@RequestBody Company company) {
-        return null;
+        return ResponseGenerator.success();
     }
 }
